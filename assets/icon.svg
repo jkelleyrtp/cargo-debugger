@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Body -->
+  <path d="M200 180
+           C 260 180, 300 140, 300 100
+           C 300 60, 260 20, 200 20
+           C 140 20, 100 60, 100 100
+           C 100 140, 140 180, 200 180"
+        fill="#DE1F1F" />
+
+  <!-- Eyes (stalks and eyeballs) -->
+  <path d="M160 60 C 160 40, 160 20, 140 10" stroke="#DE1F1F" stroke-width="8" fill="none"/>
+  <path d="M240 60 C 240 40, 240 20, 260 10" stroke="#DE1F1F" stroke-width="8" fill="none"/>
+  <circle cx="140" cy="10" r="10" fill="black"/>
+  <circle cx="260" cy="10" r="10" fill="black"/>
+  <circle cx="140" cy="10" r="4" fill="white"/>
+  <circle cx="260" cy="10" r="4" fill="white"/>
+
+  <!-- Claws -->
+  <path d="M100 100
+           C 80 100, 60 110, 40 100
+           C 20 90, 20 70, 40 60
+           C 60 50, 80 60, 100 80"
+        fill="#DE1F1F"/>
+  <path d="M300 100
+           C 320 100, 340 110, 360 100
+           C 380 90, 380 70, 360 60
+           C 340 50, 320 60, 300 80"
+        fill="#DE1F1F"/>
+
+  <!-- Legs -->
+  <path d="M140 160 C 130 180, 120 200, 110 220" stroke="#DE1F1F" stroke-width="8" fill="none"/>
+  <path d="M170 160 C 165 180, 160 200, 155 220" stroke="#DE1F1F" stroke-width="8" fill="none"/>
+  <path d="M230 160 C 235 180, 240 200, 245 220" stroke="#DE1F1F" stroke-width="8" fill="none"/>
+  <path d="M260 160 C 270 180, 280 200, 290 220" stroke="#DE1F1F" stroke-width="8" fill="none"/>
+
+  <!-- Wrench -->
+  <g transform="translate(320, 80) rotate(-15)">
+    <path d="M0 0
+             L 20 0
+             L 25 -5
+             L 45 -5
+             L 45 5
+             L 25 5
+             L 20 0
+             Z"
+          fill="#666"/>
+    <circle cx="45" cy="0" r="10" fill="#666"/>
+  </g>
+
+  <!-- Smile -->
+  <path d="M170 120 C 200 140, 230 120, 230 120"
+        stroke="black"
+        stroke-width="3"
+        fill="none"/>
+
+</svg>
