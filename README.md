@@ -1,6 +1,6 @@
-# cdb: easily launch rust executables with vscode's debugger
+# cargo-debugger: easily launch rust executables with vscode's debugger
 
-`cdb` is a simple CLI tool that launches your cargo build with the vscode debugger attached.
+`cargo-debugger` is a simple CLI tool that launches your cargo build with the vscode debugger attached.
 
 ![demo.gif](/assets/demo.gif)
 
@@ -16,7 +16,11 @@ cdb is an alias to `cargo rustc --message-format json-diagnostic-rendered-ansi .
 Any extra args after `--` will be passed to the executable under debug.
 
 ```sh
-cdb --bin dioxus-cli -- serve --verbose --experimental-bundle-split --trace --release
+cargo debugger --bin dioxus-cli -- serve --verbose --experimental-bundle-split --trace --release
 ```
 
 This will launch your cargo build with the vscode debugger attached.
+
+## License
+
+MIT
