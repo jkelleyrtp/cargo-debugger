@@ -29,6 +29,13 @@ Currently, we only support `cargo rustc` equivalents. We also only launch with t
 - You can create aliases to cargo-debugger configurations your `.zshrc` or `.bashrc` to make it easier to launch your executables.
 - We use the format outlined here for deep-link urls. https://github.com/vadimcn/codelldb/blob/master/MANUAL.md#debugging-externally-launched-code
 
+## Future Ideas
+
+- Support more cargo commands (test, bench, etc)
+- Attach to a running process (https://github.com/vadimcn/codelldb/blob/master/MANUAL.md#attaching-debugger-to-the-current-process-c)
+- WASM support
+- More editors and debuggers
+
 ## License
 
 MIT
