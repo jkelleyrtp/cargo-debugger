@@ -60,7 +60,7 @@ async fn run() -> anyhow::Result<()> {
         rest_args.push(arg.to_string());
     }
 
-    if cargo_args.iter().find(|arg| *arg == "--help").is_some() {
+    if cargo_args.iter().any(|arg| arg == "--help") {
         println!("cargo debugger [cargo args] -- [env1=val1 env2=val2] [executable args]");
         return Ok(());
     }
@@ -95,10 +95,11 @@ async fn run() -> anyhow::Result<()> {
         };
 
         match message {
-            Message::CompilerArtifact(artifact) => match artifact.executable {
-                Some(i) => output_location = Some(i),
-                None => {}
-            },
+            Message::CompilerArtifact(artifact) => {
+                if let Some(i) = artifact.executable {
+                    output_location = Some(i)
+                }
+            }
             Message::CompilerMessage(compiler_message) => {
                 if let Some(rendered) = compiler_message.message.rendered {
                     println!("{rendered}");
@@ -146,7 +147,7 @@ async fn run() -> anyhow::Result<()> {
     } else {
         "code"
     })
-    .args(&["--open-url", &url])
+    .args(["--open-url", &url])
     .output()
     .await
     .context("Failed to launch code")?;
