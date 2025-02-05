@@ -2,7 +2,7 @@
 
 `cdb` is a simple CLI tool that launches your cargo build with the vscode debugger attached.
 
-![icon.svg](/assets/icon.svg)
+![demo.gif](/assets/demo.gif)
 
 ## Installation
 
@@ -20,5 +20,3 @@ cdb --bin dioxus-cli -- serve --verbose --experimental-bundle-split --trace --re
 ```
 
 This will launch your cargo build with the vscode debugger attached.
-
-![demo.gif](/assets/demo.gif)
