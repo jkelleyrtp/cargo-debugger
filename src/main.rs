@@ -60,6 +60,11 @@ async fn run() -> anyhow::Result<()> {
         rest_args.push(arg.to_string());
     }
 
+    if cargo_args.iter().find(|arg| *arg == "--help").is_some() {
+        println!("cargo debugger [cargo args] -- [env1=val1 env2=val2] [executable args]");
+        return Ok(());
+    }
+
     let mut child = tokio::process::Command::new("cargo")
         .arg("rustc")
         .args(cargo_args)
@@ -102,10 +107,8 @@ async fn run() -> anyhow::Result<()> {
             Message::BuildScriptExecuted(_build_script) => {}
             Message::BuildFinished(build_finished) => {
                 if !build_finished.success {
-                    return Err(anyhow::anyhow!(
-                            "Cargo build failed, signaled by the compiler. Toggle tracing mode (press `t`) for more information."
-                        )
-                        .into());
+                    // assuming we received a message from the compiler, so we can exit
+                    return Ok(());
                 }
             }
             Message::TextLine(word) => println!("{word}"),
@@ -138,11 +141,15 @@ async fn run() -> anyhow::Result<()> {
         env = env
     );
 
-    tokio::process::Command::new("code")
-        .args(&["--open-url", &url])
-        .output()
-        .await
-        .context("Failed to launch code")?;
+    tokio::process::Command::new(if cfg!(target_os = "windows") {
+        "code.exe"
+    } else {
+        "code"
+    })
+    .args(&["--open-url", &url])
+    .output()
+    .await
+    .context("Failed to launch code")?;
 
     Ok(())
 }
