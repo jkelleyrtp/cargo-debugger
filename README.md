@@ -21,6 +21,11 @@ cargo debugger --bin dioxus-cli -- serve --verbose --experimental-bundle-split -
 
 This will launch your cargo build with the vscode debugger attached.
 
+## Tips
+
+- Make sure your target executable has debug symbols. Release builds won't have them. Some custom profiles won't either.
+- You can create aliases to cargo-debugger configurations your `.zshrc` or `.bashrc` to make it easier to launch your executables.
+
 ## License
 
 MIT
