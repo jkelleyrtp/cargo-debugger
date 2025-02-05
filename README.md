@@ -21,10 +21,13 @@ cargo debugger --bin dioxus-cli -- serve --verbose --experimental-bundle-split -
 
 This will launch your cargo build with the vscode debugger attached.
 
+Currently, we only support `cargo rustc` equivalents. We also only launch with the code-lldb debugger for vscode. If you'd like to use another editor or debugger, feel free to contribute!
+
 ## Tips
 
 - Make sure your target executable has debug symbols. Release builds won't have them. Some custom profiles won't either.
 - You can create aliases to cargo-debugger configurations your `.zshrc` or `.bashrc` to make it easier to launch your executables.
+- We use the format outlined here for deep-link urls. https://github.com/vadimcn/codelldb/blob/master/MANUAL.md#debugging-externally-launched-code
 
 ## License
 
