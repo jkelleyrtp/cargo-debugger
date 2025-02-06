@@ -143,7 +143,7 @@ async fn run() -> anyhow::Result<()> {
     );
 
     tokio::process::Command::new(if cfg!(target_os = "windows") {
-        "code.exe"
+        "code.cmd"
     } else {
         "code"
     })
