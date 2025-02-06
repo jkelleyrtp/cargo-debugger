@@ -1,3 +1,5 @@
+#![doc = include_str!("../README.md")]
+
 use anyhow::Context;
 use std::{env::current_dir, process::Stdio};
 use tokio::io::AsyncBufReadExt;

@@ -2,7 +2,7 @@
 
 `cargo-debugger` is a simple CLI tool that launches your cargo build with the vscode debugger attached.
 
-![demo.gif](/assets/demo.gif)
+![demo.gif](https://github.com/jkelleyrtp/cargo-debugger/raw/main/assets/demo.gif)
 
 ## Installation
 
